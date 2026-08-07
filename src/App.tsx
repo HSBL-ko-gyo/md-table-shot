@@ -252,6 +252,23 @@ export function App() {
       </main>
 
       <footer>
+        <nav className="footer-links" aria-label="関連リンク">
+          <a
+            href="https://github.com/HSBL-ko-gyo/md-table-shot"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://sites.google.com/view/hsbl-industrial-hp/home"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ハシビロ工業HP
+          </a>
+        </nav>
         <p>すべての処理はこのブラウザ内で完結します。入力データが外部へ送信されることはありません。</p>
       </footer>
 
