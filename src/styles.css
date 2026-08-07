@@ -150,9 +150,6 @@ textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in
 .capture-surface[data-cell-padding='normal'] th, .capture-surface[data-cell-padding='normal'] td { padding: 9px 12px; }
 .capture-surface[data-cell-padding='relaxed'] th, .capture-surface[data-cell-padding='relaxed'] td { padding: 13px 16px; }
 .output-table code { padding: .18em .36em; border-radius: 3px; background: var(--shot-code); color: inherit; font: .88em/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: break-spaces; }
-.output-table a { color: #0969da; text-decoration: underline; text-underline-offset: 2px; }
-.capture-surface[data-output-theme='dark'] a { color: #58a6ff; }
-
 .empty-preview { max-width: 520px; padding: 24px; color: var(--muted); text-align: center; font-size: 13px; line-height: 1.7; }
 .empty-table-icon { width: 40px; height: 32px; margin: 0 auto 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 2px; border: 1px solid var(--border); border-radius: 4px; }
 .empty-table-icon span { background: var(--border); opacity: .72; }

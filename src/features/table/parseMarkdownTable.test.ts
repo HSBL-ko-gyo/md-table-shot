@@ -9,12 +9,14 @@ describe('parseMarkdownTable', () => {
     expect(result.table?.alignments).toEqual(['left', 'center', 'right'])
   })
 
-  it('renders simple inline markdown and sanitizes unsafe html', () => {
-    const result = parseMarkdownTable(`| 項目 | 内容 |\n| --- | --- |\n| **太字** | [link](javascript:alert(1)) \`code\` |`)
+  it('renders simple inline markdown and turns links into plain text', () => {
+    const result = parseMarkdownTable(`| 項目 | 内容 |\n| --- | --- |\n| **太字** | [製品情報](https://example.com) \`code\` |`)
 
     expect(result.table?.rows[0][0].html).toContain('<strong>太字</strong>')
     expect(result.table?.rows[0][1].html).toContain('<code>code</code>')
-    expect(result.table?.rows[0][1].html).not.toContain('javascript:')
+    expect(result.table?.rows[0][1].html).toContain('製品情報')
+    expect(result.table?.rows[0][1].html).not.toContain('<a')
+    expect(result.table?.rows[0][1].html).not.toContain('https://')
   })
 
   it('returns a helpful error for non-table input', () => {

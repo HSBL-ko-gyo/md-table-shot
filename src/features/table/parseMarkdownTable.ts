@@ -8,7 +8,7 @@ export interface ParseResult {
   extraTableCount: number
 }
 
-const allowedInlineTags = ['strong', 'b', 'em', 'i', 'code', 'a', 'del', 'br']
+const allowedInlineTags = ['strong', 'b', 'em', 'i', 'code', 'del', 'br']
 
 function renderCell(cell: Tokens.TableCell): TableCellModel {
   const rendered = marked.parseInline(cell.text, {
@@ -18,7 +18,7 @@ function renderCell(cell: Tokens.TableCell): TableCellModel {
 
   const html = DOMPurify.sanitize(rendered, {
     ALLOWED_TAGS: allowedInlineTags,
-    ALLOWED_ATTR: ['href', 'title'],
+    ALLOWED_ATTR: [],
   })
 
   return { html, text: cell.text }
