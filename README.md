@@ -2,6 +2,8 @@
 
 Markdownのテーブルを、noteやブログへ貼り付けやすいPNG画像に変換する静的Webツールです。入力・解析・画像生成はすべてブラウザ内で行い、Markdownを外部サーバーへ送信しません。
 
+**公開版:** [https://hsbl-ko-gyo.github.io/md-table-shot/](https://hsbl-ko-gyo.github.io/md-table-shot/)
+
 ## 主な機能
 
 - GFM形式のMarkdown tableをリアルタイムプレビュー
