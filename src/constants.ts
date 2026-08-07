@@ -1,10 +1,20 @@
 import type { AppSettings } from './types'
 
+export const LEGACY_SAMPLE_MARKDOWN = `| 項目 | 内容 |
+| :--- | :--- |
+| CPU | **QRB2210** |
+| RAM | 4GB |
+| 詳細 | \`省電力モデル\` / [製品ページ](https://example.com) |`
+
 export const SAMPLE_MARKDOWN = `| 項目 | 内容 |
 | :--- | :--- |
 | CPU | **QRB2210** |
 | RAM | 4GB |
 | 詳細 | \`省電力モデル\` / 製品情報 |`
+
+export function migrateMarkdownInput(value: string): string {
+  return value === LEGACY_SAMPLE_MARKDOWN ? SAMPLE_MARKDOWN : value
+}
 
 export const DEFAULT_SETTINGS: AppSettings = {
   uiTheme: 'light',

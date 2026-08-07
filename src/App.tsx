@@ -2,7 +2,12 @@ import { useMemo, useRef, useState } from 'react'
 import { Icon } from './components/Icon'
 import { SegmentedControl } from './components/SegmentedControl'
 import { TablePreview } from './components/TablePreview'
-import { DEFAULT_SETTINGS, SAMPLE_MARKDOWN, STORAGE_KEYS } from './constants'
+import {
+  DEFAULT_SETTINGS,
+  migrateMarkdownInput,
+  SAMPLE_MARKDOWN,
+  STORAGE_KEYS,
+} from './constants'
 import {
   copyPngToClipboard,
   createPngBlob,
@@ -18,6 +23,7 @@ export function App() {
   const [markdown, setMarkdown] = usePersistentState(
     STORAGE_KEYS.markdown,
     SAMPLE_MARKDOWN,
+    migrateMarkdownInput,
   )
   const [settings, setSettings] = usePersistentState<AppSettings>(
     STORAGE_KEYS.settings,
